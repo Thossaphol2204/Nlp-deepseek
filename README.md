@@ -1,82 +1,43 @@
-# 🧠 Animal-Specialized DeepSeek R1 Fine-Tuning Project
+# 🧠 Fine-Tune DeepSeek R1 on Animal Dataset
 
-## 📖 Overview
-This project fine-tunes the **DeepSeek R1 LLM** on animal-specific datasets to enhance its capability in answering questions and generating content related to animals (e.g., species classification, behaviors, habitats). The fine-tuned model will be deployed on a live web service.
-
----
-
-## 🔍 Objectives
-- Fine-tune DeepSeek R1 using structured animal datasets (biology, taxonomy, behaviors).
-- Deploy the model on a web interface for real-world Q&A.
-- Evaluate model performance post-fine-tuning.
+โครงการนี้เป็นการ **Fine-tune โมเดล LLM DeepSeek R1** ด้วยข้อมูลเฉพาะทางเกี่ยวกับสัตว์ เพื่อให้โมเดลสามารถตอบคำถามและสร้างเนื้อหาเชิงลึกในหัวข้อที่เกี่ยวกับสัตว์ได้แม่นยำยิ่งขึ้น โดยโมเดลที่เทรนเสร็จจะถูกนำไปใช้งานบนเว็บไซต์จริง
 
 ---
 
-## 🗂 Project Structure
-animal-llm-project/
-│
-├── data/ # Animal datasets (JSON/TXT/CSV)
-├── scripts/ # Data processing & training scripts
-│ ├── prepare_dataset.py # Dataset preprocessing
-│ └── finetune.py # Fine-tuning script
-│
-├── model/ # Saved model checkpoints
-│
-├── web/ # Web deployment
-│ ├── app.py # Flask/FastAPI backend
-│ └── templates/ # Frontend HTML
-│
-├── README.md
-└── requirements.txt # Python dependencies
+## 📌 รายละเอียดโปรเจค
+
+- เทรนโมเดล DeepSeek R1 ด้วยข้อมูลเกี่ยวกับสัตว์ เช่น ลักษณะนิสัย การดำรงชีวิต ชีววิทยา ฯลฯ  
+- ปรับแต่งโมเดลโดยใช้เทคนิค Fine-tuning ด้วย Hugging Face  
+- นำโมเดลที่เทรนเสร็จมาใช้ตอบคำถามบนเว็บไซต์ผ่าน API  
 
 ---
 
-## ⚙️ Setup & Usage
+## 💡 ตัวอย่างการใช้งาน
 
-### 1. Install Dependencies
-```bash
-pip install -r requirements.txt
-2. Prepare Dataset
-Place animal datasets in data/ in a supported format (e.g., JSON with prompt-response pairs). Example:
+**ถาม:** เสือชีตามีความสามารถในการล่าเหยื่ออย่างไร?  
+**ตอบ:** เสือชีตาเป็นสัตว์บกที่วิ่งเร็วที่สุดในโลก สามารถวิ่งได้เร็วถึง 110 กม./ชม. ใช้ความเร็วในการล่าเหยื่อระยะสั้น...
 
-json
-{"prompt": "What is a lion's hunting behavior?", "response": "Lions hunt in groups..."}
-3. Fine-Tune the Model
-Run with GPU (recommended):
+---
 
-bash
-python scripts/finetune.py
-4. Launch Web App
-bash
-cd web/
-python app.py
-Access at: http://localhost:5000
+## 🛠️ เทคโนโลยีที่ใช้
 
-🧪 Example Input/Output
-User Query:
-"How do elephants communicate?"
+- DeepSeek R1 (Hugging Face)
+- Transformers (Hugging Face)
+- PyTorch, Pandas
+- Python + Flask (หรือ FastAPI)
+- HTML + Jinja2 (สำหรับหน้าเว็บ)
 
-Model Response:
-"Elephants use low-frequency rumbles, body language, and seismic vibrations..."
+---
 
-🛠️ Technologies Used
-LLM: DeepSeek R1 (Hugging Face)
+## 📜 License
 
-Frameworks: Transformers, PyTorch, Flask/FastAPI
+โครงการนี้เผยแพร่ภายใต้ MIT License  
+กรุณาตรวจสอบใบอนุญาตของโมเดล DeepSeek R1 ก่อนใช้งานในเชิงพาณิชย์
 
-Tools: Pandas, JSON, Hugging Face Datasets
+---
 
-📌 Notes
-Ensure datasets are copyright-free or properly licensed.
+## 🌐 อ้างอิง
 
-Verify DeepSeek R1’s fine-tuning license terms before deployment.
-
-For large-scale training, use GPU/TPU acceleration.
-
-📚 References
-DeepSeek on Hugging Face
-
-Transformers Documentation
-
-Flask Guide
-
+- https://huggingface.co/deepseek-ai  
+- https://huggingface.co/docs/transformers  
+- https://flask.palletsprojects.com/
